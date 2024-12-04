@@ -20,6 +20,4 @@ def bolões(connect, chave, IdPartida, hora):
     connect.commit() 
     cursor.close()
 
-def partidas(connect, hora, data, local, IdTime):
-    cursor = connect.cursor()
-    cursor.execute("INSERT INTO Partidas (hora, data, local, IdTime) VALUES (%s, %s, %s, %i)", (hora, data, local, IdTime))
+
