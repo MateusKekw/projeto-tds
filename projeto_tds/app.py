@@ -1,6 +1,7 @@
 from flask import *
 from projeto_tds.functions import *
 
+connect = connect_init
 app = Flask(__name__)
 
 # definição de rotas
