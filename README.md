@@ -1,0 +1,1 @@
+poetry run flask --app projeto_tds/app.py run
