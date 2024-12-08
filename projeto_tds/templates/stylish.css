@@ -23,6 +23,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    overflow: hidden;
 }
 
 .field{
@@ -40,10 +41,10 @@ body{
     background-color: #d9d9d9;
     text-align: center;
     margin-top: 5%;
-    transform: translateX(-5%);
+    transform: translateY(-5%);
     border-radius: 3%;
     width: 310px;
-    height: 350px;
+    height: 340px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -57,10 +58,10 @@ body{
     background-color: #d9d9d9;
     text-align: center;
     border-radius: 3%;
-    margin-top: 5%;
-    transform: translateX(-5%);
+    margin-top: 3%;
+    transform: translateY(-3%);
     width: 310px;
-    height: 450px;
+    height: 400px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -69,33 +70,42 @@ body{
     background-color: #d9d9d9;
     text-align: center;
     margin-top: 5%;
-    transform: translateX(-5%);
+    transform: translateY(-5%);
     border-radius: 3%;
     width: 310px;
-    height: 280px;
+    height: 230px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
 
+.botoes{
+    margin-top: 11%;
+    transform: translateY(-11%);
+}
+
 .h4{
     text-align: center;
-    text-size-adjust: 20px;
+    font-size: 23px;
 }
 
 .dados{
-    margin-right: 30%;
-    transform: translateX(-30%);
+    margin-right: 60%;
+    transform: translateX(-60%);
+    margin-top: 11%;
+    transform: translateY(-11%);
 }
 
 .d2{
-    margin-right: 16%;
-    transform: translateX(-16%);
+    margin-right: 38%;
+    transform: translateX(-38%);
+    margin-top: 11%;
+    transform: translateY(-11%);
 }
 
 .u{
     text-align: center;
     margin-top: 5%;
-    transform: translateX(-5%);
+    transform: translateY(-5%);
     margin-left: 50%;
     transform: translateX(-50%);
 }
@@ -109,8 +119,8 @@ body{
     border-radius: 20%;
     cursor: pointer;
     text-align: center;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .upload-icon:hover {
@@ -118,6 +128,8 @@ body{
 }
 
 .group{
-    margin-right: 15%;
-    transform: translateX(-15%);
+    margin-right: 50%;
+    transform: translateX(-50%);
+    margin-top: 8%;
+    transform: translateY(-8%);
 }
