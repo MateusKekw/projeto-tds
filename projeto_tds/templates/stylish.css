@@ -1,3 +1,5 @@
+/* backgrounds */
+
 *,
 *::before,
 *::after {
@@ -19,7 +21,7 @@ html{
 body{
     width: 100%;
     height: 100%;
-    background: url('imagens/campo.jpg'), linear-gradient(to right, #19d114, #009638);
+    background: url('imagens/campo.png'), linear-gradient(to right, #19d114, #009638);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -36,6 +38,21 @@ body{
     align-items: center;
     padding: 0%;
 }
+
+.f2{
+    width: 100%;
+    height: 100%;
+    background: url('imagens/campo.png'), linear-gradient(to right, #19d114, #009638);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 0%;
+}
+
+
+/*login e cadastro*/
 
 .login{
     background-color: #d9d9d9;
@@ -81,6 +98,7 @@ body{
 .botoes{
     margin-top: 11%;
     transform: translateY(-11%);
+    cursor: pointer;
 }
 
 .h4{
@@ -132,4 +150,36 @@ body{
     transform: translateX(-50%);
     margin-top: 8%;
     transform: translateY(-8%);
+}
+
+
+/* ligas */
+.account{
+    position: bottom;
+    background-image: linear-gradient(to bottom, #bbbbbb, #ffffff);
+    display: flex;
+    height: 100%;
+    width: 220px;
+    align-content: center;
+}
+
+.account .user{
+    width: 170px;
+    height: 170px;
+    margin-left: 40%;
+    transform: translateX(-40%);
+    margin-top: 40%;
+    transform: translateX(-40%);
+}
+
+.jogos{
+    background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+    display: flex;
+    width: 100%;
+    height: 80px;
+}
+
+.jogos .balls{
+    margin-top: 40%;
+    transform: translateY(-40%);
 }
