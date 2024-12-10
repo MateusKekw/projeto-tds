@@ -26,6 +26,7 @@ body{
     background-position: center;
     background-size: contain;
     overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .field{
@@ -99,9 +100,22 @@ body{
     margin-top: 11%;
     transform: translateY(-11%);
     cursor: pointer;
+    height: 40px;
+    width: 120px;
 }
 
-.h4{
+.botoes:active{
+    opacity: 0.9;
+}
+.botoes[disabled]{
+    opacity: 0.6;
+}
+
+.username.botoes{
+    background: linear-gradient(to right, #a6a6a6, #ffffff);
+}
+
+h4{
     text-align: center;
     font-size: 23px;
 }
@@ -152,7 +166,10 @@ body{
     transform: translateY(-8%);
 }
 
-
+.erro{
+    color:red;
+    display: none;
+}
 /* ligas */
 .account{
     position: bottom;
@@ -182,4 +199,26 @@ body{
 .jogos .balls{
     margin-top: 40%;
     transform: translateY(-40%);
+}
+
+.classic{
+    margin-top: 6%;
+    transform: translateY(-6%);
+    font-size: 18px;
+}
+
+.league{
+    margin-left: 35%;
+    transform: translateX(-35%);
+}
+
+.desc{
+    width: 500px;
+    height: 150px;
+}
+
+.set{
+    margin-top: 6%;
+    transform: translateY(-6%);
+    font-size: 18px;
 }
