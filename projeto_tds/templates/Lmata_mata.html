@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylish.css">
+</head>
+<body class="b">
+    <figure>
+        <img src="./imagens/logo.png" alt="1" class="balls" title="bolões" width="80" height="80">
+    </figure>
+    <h4>Criar liga <br> mata-mata</h4>
+
+    <form action="functions.py" method="post" autocomplete="off">
+        <div class="league">
+            <p class="classic"><label for="liga">Nome:</label></p>
+            <input size="67" maxlength="40" type="text" name="Liga" id="liga" required>
+
+            <p class="classic"><label for="descricao">Descrição:</label></p>
+            <textarea name="desc" id="descricao" maxlength="100" class="desc"></textarea>
+
+            <p class="classic">Participantes:
+            <select name="participantes">
+                <option value="a">4</option>
+                <option value="b">8</option>
+                <option value="c">16</option>
+                <option value="d">32</option>
+            </select>
+            </p>
+            
+        </div>
+    </form>
+    
+</body>
+</html>

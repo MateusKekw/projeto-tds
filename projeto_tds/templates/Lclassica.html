@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylish.css">
+</head>
+<body class="b">
+    <figure>
+        <img src="./imagens/logo.png" alt="1" class="balls" title="bolões" width="80" height="80">
+    </figure>
+    <h4>Criar liga <br> clássica</h4>
+
+    <form action="functions.py" method="post" autocomplete="off">
+        <div class="league">
+            <p class="classic"><label for="liga">Nome:</label></p>
+            <input size="67" maxlength="40" type="text" name="Liga" id="liga" required>
+
+            <p class="classic"><label for="descricao">Descrição:</label></p>
+            <textarea name="desc" id="descricao" maxlength="100" class="desc"></textarea>
+
+            <p class="classic">Participantes:
+            <select name="participantes" >
+                <option value="a">4</option>
+                <option value="b">5</option>
+                <option value="c">6</option>
+                <option value="d">7</option>
+                <option value="e">8</option>
+                <option value="f">9</option>
+                <option value="g">10</option>
+                <option value="h">11</option>
+                <option value="i">12</option>
+                <option value="j">13</option>
+                <option value="k">14</option>
+                <option value="l">15</option>
+                <option value="m">16</option>
+                <option value="n">17</option>
+                <option value="o">18</option>
+                <option value="p">19</option>
+                <option value="q">20</option>
+            </select>
+            
+
+            Duração(rodadas):
+            <select name="participantes" >
+                <option value="a">5</option>
+                <option value="b">10</option>
+                <option value="c">15</option>
+                <option value="d">19</option>
+                <option value="e">25</option>
+                <option value="f">30</option>
+                <option value="g">35</option>
+                <option value="h">38</option>
+            </select>
+            </p>
+        </div>
+    </form>
+    
+</body>
+</html>
