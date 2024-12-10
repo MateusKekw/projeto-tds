@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylish.css">
+    <link rel="stylesheet" href="./static/stylish.css">
 </head>
 <body class="b">
     <figure>
-        <img src="./imagens/logo.png" alt="1" class="balls" title="bolões" width="110" height="110">
+        <img src="./static/logo.jpg" alt="1" class="balls" title="bolões" width="110" height="110">
     </figure>
 
     <div class="login">
-    <form action="functions.py" method="post" autocomplete="on">
+    <form action="/autenticar" method="post" autocomplete="on">
         <br>
         <p class="dados"><label for="iE-mail">Email</label> </p>
         <input size="30" maxlength="50" type="text" name="E-mail" id="iE-mail" autocomplete="email" onchange="OnChangeEmail()">
