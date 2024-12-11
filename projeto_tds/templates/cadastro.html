@@ -14,23 +14,30 @@
     <br>
     <h4>Cadastro</h4>
     <div class="login2">
-        <form action="functions.py" method="post" autocomplete="off">
+        <form action="/autenticar" method="post" autocomplete="off">
             <br>
             <p class="dados"><label for="iEmail">Email</label></p>
-            <input size="30" maxlength="50" type="text" name="E-mail" id="iEmail" required>
+            <input size="30" maxlength="50" type="text" name="E-mail" id="iEmail" onchange="CreateEmail()">
+            <div class="erro" id="E-required">Email é obrigatório</div>
+            <p class="erro" id="Invalid-email">Email inválido</p>
         
             <p class="dados"><label for="iPassword">Senha</label></p>
-            <input size="30" minlength="8" maxlength="20" type="password" name="Password" id="iPassword" required>
+            <input size="30" minlength="8" maxlength="20" type="password" name="Password" id="iPassword" onchange="CreateSenha()">
+            <p class="erro" id="P-required">Insira uma senha</p>
         
             <p class="d2"><label for="ic-Password">Confirme a senha</label></p>
-            <input size="30" minlength="8" maxlength="20" type="password" name="iC-Password" id="ic-Password" required>
+            <input size="30" minlength="8" maxlength="20" type="password" name="iC-Password" id="ic-Password" onchange="ConfirmSenha()">
+            <p class="erro" id="No-password">Insira a senha novamente</p>
+            <p class="erro" id="CP-password">Senha inválida</p>
         
             <p class="dados"><label for="data">Idade</label></p>
             <input type="date" id="data">
 
             <br>
         
-            <input type="submit" value="Finalizar Cadastro" class="botoes">
+            <input type="submit" value="Finalizar Cadastro" class="botoes" id="ConfirmCadastro" onchange="TButtonsDisable()">
+
+            <script src="./scripts/cadastro.js"></script>
         </form>
     </div>
 </body>
