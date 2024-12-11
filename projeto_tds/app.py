@@ -22,3 +22,19 @@ def cadastro():
 @app.route("/recuperação-de-conta")
 def forgot_senha():
     return render_template('forgotsenha.html')
+
+@app.route("/user-cadastro")
+def userCadastro():
+    return render_template('user.html')
+
+@app.route("/liga-mata")
+def ligaMata():
+    return render_template('Lmata_mata.html')
+
+@app.route("/liga-principal")
+def ligaMain():
+    return render_template('ligaMain.html')
+
+@app.route("/liga-classica")
+def ligaClassica():
+    return render_template('Lclassica.html')
