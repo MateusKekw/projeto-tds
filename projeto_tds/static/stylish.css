@@ -21,7 +21,7 @@ html{
 body{
     width: 100%;
     height: 100%;
-    background: url('campo.jpg'), linear-gradient(to right, #19d114, #009638);
+    background: url('campo.png'), linear-gradient(to right, #19d114, #009638);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -43,7 +43,7 @@ body{
 .f2{
     width: 100%;
     height: 100%;
-    background: url('campo.jpg'), linear-gradient(to right, #19d114, #009638);
+    background: url('campo.png'), linear-gradient(to right, #19d114, #009638);
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
@@ -221,4 +221,22 @@ h4{
     margin-top: 6%;
     transform: translateY(-6%);
     font-size: 18px;
+}
+
+/*amizades*/
+.amizades{
+    margin-top: 6%;
+    transform: translateY(-6%);
+    background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+    display: flex;
+    height: 60px;
+    width: 90%;
+    position: center;
+}
+
+.amizades.user{
+    margin-left: 5%;
+    transform: translateX(-5%);
+    width: 90px;
+    height: 90px;
 }
