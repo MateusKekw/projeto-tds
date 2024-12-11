@@ -1,6 +1,8 @@
 from flask import *
 from projeto_tds.functions import *
 
+import projeto_tds.brasileirao as brasileirao
+
 connect = connect_init
 app = Flask(__name__)
 
@@ -38,3 +40,7 @@ def ligaMain():
 @app.route("/liga-classica")
 def ligaClassica():
     return render_template('Lclassica.html')
+
+@app.route("/api/brasileirao")
+def get_brasileirao():
+    return brasileirao.baixarbrasileirao()
