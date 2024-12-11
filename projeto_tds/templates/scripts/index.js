@@ -1,4 +1,4 @@
-const brasileirao = "https://api.api-futebol.com.br/v1/campeonatos/10";
+const brasileirao = "https://api.api-futebol.com.br/v1/campeonatos/10"
 
 //pegar os jogos
 async function GetGames(){
