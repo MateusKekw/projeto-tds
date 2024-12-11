@@ -12,4 +12,4 @@ async function GetGames(){
     console.log(jogos);
 }
 
-GetGames()
+GetGames();
