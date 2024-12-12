@@ -44,3 +44,11 @@ def ligaClassica():
 @app.route("/api/brasileirao")
 def get_brasileirao():
     return brasileirao.baixarbrasileirao()
+
+@app.route("/amizade")
+def amizade():
+    return render_template('amizade.html')
+
+@app.route("/configuracao")
+def configurar():
+    return render_template('config.html')
