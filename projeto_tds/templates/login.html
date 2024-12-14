@@ -13,16 +13,16 @@
     </figure>
 
     <div class="login">
-    <form action="/autenticar" method="post" autocomplete="on">
+    <form action="/login" method="post" autocomplete="on">
         <br>
-        <p class="dados"><label for="iE-mail">Email</label> </p>
-        <input size="30" maxlength="50" type="text" name="E-mail" id="iE-mail" autocomplete="email" onchange="OnChangeEmail()">
+        <p class="dados"><label for="email">Email</label> </p>
+        <input size="30" maxlength="50" type="text" name="email" id="email" autocomplete="email" onchange="OnChangeEmail()">
 
         <div class="erro" id="Email-required">Email é obrigatório</div>
         <p class="erro" id="Wrong-email">Email inválido</p>
         
-        <p class="dados"><label for="iSenha">Senha</label> </p>
-        <input size="30" maxlength="20" type="password" name="Senha" id="iSenha" autocomplete="current-password" onchange="OnChangeSenha()">
+        <p class="dados"><label for="senha">Senha</label> </p>
+        <input size="30" maxlength="20" type="password" name="senha" id="senha" autocomplete="current-password" onchange="OnChangeSenha()">
         
         <p class="erro" id="Password-required">Insira uma senha</p>
         <p class="erro" id="Wrong-password">Senha inválida</p>
