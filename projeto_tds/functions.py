@@ -1,6 +1,8 @@
 from flask import *
 import mysql.connector
 
+import projeto_tds.brasileirao as brasileirao
+
 # Funções primordiais para o funcionamento do sistema
 # (por enquanto)
 

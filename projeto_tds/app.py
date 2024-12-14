@@ -41,9 +41,10 @@ def ligaMain():
 def ligaClassica():
     return render_template('Lclassica.html')
 
-@app.route("/api/brasileirao")
-def get_brasileirao():
-    return brasileirao.baixarbrasileirao()
+# isso aqui não faz sentido, pq abriria o link do api do site?
+# @app.route("/api/brasileirao")
+# def get_brasileirao():
+#     return brasileirao.baixarbrasileirao()
 
 @app.route("/amizade")
 def amizade():
