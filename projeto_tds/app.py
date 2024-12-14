@@ -164,7 +164,7 @@ def amizade():
 
 @app.route("/nova-amizade")
 def newamizade():
-    return render_template('addamizade.html', usuarios=userlist)
+    return render_template('addamizade.html')
 
 @app.route("/configuracao")
 def configurar():
