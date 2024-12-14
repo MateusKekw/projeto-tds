@@ -9,6 +9,14 @@ app = Flask(__name__)
 
 # definição de rotas
 # Nome seguido de - // ingual o arquivo.html
+friendlist = [
+        {"username" : "Mateus", "time" : "Santos"},
+        {"username" : "Milhomem", "time" : "Palmeiras"},
+    ]
+
+@app.route("/")
+def index ():
+    return render_template('index.html')
 
 @app.route("/login")
 def login():
@@ -152,7 +160,11 @@ def ligaClassica():
 
 @app.route("/amizade")
 def amizade():
-    return render_template('amizade.html')
+    return render_template('amizade.html', amizades=friendlist)
+
+@app.route("/nova-amizade")
+def newamizade():
+    return render_template('addamizade.html', usuarios=userlist)
 
 @app.route("/configuracao")
 def configurar():
@@ -161,3 +173,7 @@ def configurar():
 @app.route("/regra")
 def regras():
     return render_template('regras.html')
+
+@app.route("/fundo")
+def fundo():
+    return render_template('fundo.html')

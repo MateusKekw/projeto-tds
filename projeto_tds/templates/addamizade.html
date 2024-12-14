@@ -1,0 +1,51 @@
+{% extends "menu.html"%}
+
+{%block content%}
+    <h4>Adicionar amigos</h4>
+    <input type="search" name="newfriends" id="new">
+    
+    {% if newfriends not in amizades and usuarios%}
+    {% for usuario in usuarios%}
+    <div class="amizadesnovas">
+        <table>    
+            <tr class="altura">
+                <td>
+                    <figure>
+                        <img src="./static/user.png" alt="1" class="user" title="usuario">
+                    </figure>
+                </td>
+                <td class="name">
+                    <p>{{amizade.username}}</p>
+                </td>
+                <td class="time">
+                    <p>
+                        <figure>
+                            <img src="./static/escudos/{{amizade.time}}.png" alt="" class="time">
+                        </figure>
+                    </p>
+                </td>
+                <td>
+                    <button type="button" class="solAmizade">Solicitar<br>Amizade</button>
+                </td>
+            </tr>    
+        </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
+
+    
+
+    <!--<div class="amizadenovas">
+        <figure>
+            <img src="./static/user.png" alt="1" class="user" title="usuario">
+        </figure>
+            essa parte vai precisar do backend. Deixei uma base do q usaremos depois
+        
+        <p>username</p>
+        <img src="(nome do time).png" alt="" class="time">
+
+        <button>Solicitar amizade</button>
+         
+    </div>
+    -->

@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./static/stylish.css">
-</head>
-<body class="b">
-    <img src="./static/back.png" alt="1" class="back" title="voltar">
-    <input type="submit" href="index.html" id="voltar" hidden>  
-     
-    <figure>
-        <img src="./static/logo.jpg" alt="1" class="balls" title="bolões" width="100" height="100">
-    </figure>
+{% extends "menu.html"%}
+
+{%block content%}
     <h4>Configurações</h4>
-    
-    <div class="buttons">
-        <input type="submit" value="Perfil" class="botoes" href="user.html"> 
+        
+    <nav class="buttons">
+        <input type="submit" value="Perfil" class="botoes" href="/user-cadastro"> 
         <input type="submit" value="Tema de Fundo" class="botoes"> 
-        <input type="submit" value="Privacidade" class="botoes">
-        <input type="submit" value="Segurança" class="botoes">
-        <input type="submit" value="Acessibilidade" class="botoes">    
-    </div>
-</body>
-</html>
+    </nav>
+{%endblock%}

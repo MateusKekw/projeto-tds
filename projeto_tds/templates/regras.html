@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./static/stylish.css">
-</head>
-<body class="bolao">
-    <img src="./static/back.png" alt="1" class="back" title="voltar">
-    <input type="submit" href="index.html" id="voltar" hidden>  
-     
-    <figure>
-        <img src="./static/logo.jpg" alt="1" class="balls" title="bolões" width="100" height="100">
-    </figure>
+{% extends "menu.html"%}
+
+{%block content%}
     <h4>Regras</h4>
-
-
     <p class="regras">
         "Meus Bolões" é uma aplicação em que você pode palpitar
         sobre resultados de jogos do Campeonato Brasileiro de futebol das séries A e B <br>
@@ -23,6 +9,14 @@
     </p>
 
     <h4>Bolão</h4>
+    <p class="regras">
+        Para palpitar sobre um resultado de um jogo, 
+    </p>
 
-</body>
-</html>
+    <h4>Pontuação</h4>
+    <p class="regras">
+        Caso você acerte exatamente o resultado final da partida, ganhará 3 pontos sobre ela. <br>
+        Caso não acerte o placar exato, mas acerte o vencedor do confronto, ganhará um ponto. <br>
+        Caso não acerte nem o placar exato 
+    </p>
+{%endblock%}

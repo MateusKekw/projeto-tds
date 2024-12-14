@@ -1,31 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./static/stylish.css">
-</head>
-<body class="b">
-    <img src="./static/back.png" alt="1" class="back" title="voltar">
-    <input type="submit" href="index.html" id="voltar" hidden>  
-     
-    <figure>
-        <img src="./static/logo.jpg" alt="1" class="balls" title="bolões" width="100" height="100">
-    </figure>
-    <h4>Amizades</h4>
-    <input type="submit" value="Adicionar amigos" class="botoes">   
+{% extends "menu.html"%}
 
+{%block content%}
+    <h4>Amizades</h4>
+    <table>
+        <tr>
+            <td>
+                <input type="submit" href="./index.html" id="voltar" class="back" hidden>  
+            </td>
+
+            <td>
+                <input type="submit" value="Adicionar amigos" class="botoes"> 
+            </td>
+        </tr>
+    </table>
+    
+    {% if amizades %}
+    {% for amizade in amizades %}
     <div class="amizadesatuais">
-        <figure>
-            <img src="./static/user.png" alt="1" class="user" title="usuario">
-        </figure>
-    <!--essa parte vai precisar do backend. Deixei uma base do q usaremos depois
-        
-        <p>username</p>
-        <img src="(nome do time).png" alt="" class="time">
-         -->
+        <table>    
+            <tr class="altura">
+                <td>
+                    <figure>
+                        <img src="./static/user.png" alt="1" class="user" title="usuario">
+                    </figure>
+                </td>
+                <td class="mane">
+                    <p>{{amizade.username}}</p>
+                </td>
+                <td class="time">
+                    <p>
+                        <figure>
+                            <img src="./static/escudos/{{amizade.time}}.png" alt="" class="time">
+                        </figure>
+                    </p>
+                </td>
+            </tr>    
+        </table>
     </div>
-</body>
-</html>
+    {% endfor %}
+    {% endif %}
+{% endblock %}

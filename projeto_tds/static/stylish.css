@@ -241,6 +241,7 @@ h4{
 .back{
     width: 50px;
     height: 50px;
+    cursor: pointer;
 }
 
 /*amizades*/
@@ -254,9 +255,9 @@ h4{
     position: center;
 }
 
-.amizades.user{
-    width: 40px;
-    height: 40px;
+.amizadesatuais.user{
+    width: 30px;
+    height: 20px;
 }
 
 .friend.balls{
@@ -265,11 +266,13 @@ h4{
 
 .amizadesatuais{
     background-color: white;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin-left: 10%;
+    transform: translateX(-10%);
     width: 80%;
     height: 150px;
-    border-radius: 10%;
+    margin-top: 2%;
+    transform: translateY(-2%);
+    align-content: center;
 }
 
 .buttons{
@@ -283,14 +286,32 @@ h4{
     transform: (-1%);
 }
 
-/* regras */
-.regras{
-    margin-bottom: 5%;
-    transform: translateY(-5%);
-    text-align: center;
-    font-size: 16px;
+.solAmizade{
+    height: 20px;
+    width: 40px;
 }
 
-.bolao{
-    background-color: #ddd;
+.name{
+    width: 80%;
+}
+
+.mane{
+    width: 100%;
+}
+
+.time{
+    height: 140px;
+    width: 140px;
+}
+
+.altura{
+    height: 150px;
+}
+
+/* regras */
+.regras{
+    margin-bottom: 3%;
+    transform: translateY(-3%);
+    text-align: center;
+    font-size: 16px;
 }
