@@ -52,3 +52,7 @@ def amizade():
 @app.route("/configuracao")
 def configurar():
     return render_template('config.html')
+
+@app.route("/regra")
+def regras():
+    return render_template('regras.html')
