@@ -263,19 +263,28 @@ h4{
     transform: translateX(-50%);
 }
 
-.amizadesatuais.user{
-    width: 30px;
-    height: 20px;
+.user{
+    width: 100px;
+    height: 100px;
+    background-size: contain;
 }
 
 .amizadesatuais{
     background-color: white;
-    margin-left: 10%;
-    transform: translateX(-10%);
-    width: 80%;
-    height: 120px;
+    margin-left: 25%;
+    transform: translateX(-25%);
+    width: 50%;
+    height: 100px;
     margin-top: 2%;
     transform: translateY(-2%);
+}
+
+.amizadesnovas{
+    background-color: white;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100px;
 }
 
 .buttons{
@@ -290,12 +299,15 @@ h4{
 }
 
 .solAmizade{
-    height: 20px;
-    width: 40px;
+    height: 50px;
+    width: 70px;
+    background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+    border-radius: 10%;
+    cursor: pointer;
 }
 
 .name{
-    width: 80%;
+    width: 64%;
 }
 
 .mane{
@@ -303,12 +315,23 @@ h4{
 }
 
 .time{
-    height: 140px;
-    width: 140px;
+    height: 90px;
+    width: 80px;
 }
 
-.altura{
-    height: 150px;
+.torcida{
+    width: 20%;
+}
+
+.solicitar{
+    margin-left: 40%;
+    transform: translateX(-40%);
+}
+
+table{
+    height: 60px;
+    margin-top: 3%;
+    transform: translateY(-3%);
 }
 
 /* regras */
@@ -322,36 +345,50 @@ h4{
 /* fundo */
 
 .fundos{
-    align-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 180px;
 }
 
 .fundo{
-    border-color: black;
-    margin-left: 12%;
-    transform: translateX(-12%);
-    width: 230px;
-    height: 150px;
+    width: 270px;
+    height: 180px;
+    cursor: pointer;
 }
-
-.fundo.imagem{
-    width: 120px;
-    height: 140px;
-}
-
 
 /* caixa de mensagens */
 .confirm{
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+    margin-right: 15%;
+    transform: translateX(-15%);
 }
 
 .naolidas{
     background-color: white;
-    margin-left: 10%;
-    transform: translateX(-10%);
-    width: 70%;
-    height: 120px;
+    margin-left: 30%;
+    transform: translateX(-30%);
+    width: 40%;
+    height: 80px;
     margin-top: 2%;
     transform: translateY(-2%);
+}
+
+.ok{
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.message{
+    width: 90%;
+    margin-bottom: 2%;
+    transform: translateY(-2%);
+}
+
+.altura{
+    height: 80px;
 }

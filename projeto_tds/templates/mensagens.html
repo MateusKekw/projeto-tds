@@ -5,29 +5,31 @@
     
     {% if mensagens %}
     {% for mensagem in mensagens %}
-    <div class="naolidas">
-        <table>    
-            <tr class="altura">
-                <td class="mane">
-                    <p>{{mensagem.username}} {{mensagem.mensagem}}</p>
-                </td>
-                <td>
-                    <div class="confirm">
-                        <figure>
-                            <img src="./static/check.png" alt="">
-                        </figure>
-                    </div>
-                </td>
-                <td>
-                    <div class="confirm">
-                        <figure>
-                            <img src="./static/x.png" alt="">
-                        </figure>
-                    </div>
-                </td>
-            </tr>    
-        </table>
-    </div>
+        <div class="naolidas">
+            <table class="altura">    
+                <tr class="altura">
+                    <td class="message">
+                        <p>{{mensagem.username}} {{mensagem.mensagem}}</p>
+                    </td>
+                    <td>
+                        <div class="confirm">
+                            <figure>
+                                <img src="./static/check.png" alt="" class="ok">
+                            </figure>
+                            <button type="button" hidden>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="confirm">
+                            <figure>
+                                <img src="./static/x.png" alt="" class="ok">
+                            </figure>
+                            <button type="button" hidden>
+                        </div>
+                    </td>
+                </tr>    
+            </table>
+        </div>
     {% endfor %}
     {% endif %}
 {% endblock %}

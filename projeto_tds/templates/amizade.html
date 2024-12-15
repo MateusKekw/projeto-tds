@@ -2,31 +2,31 @@
 
 {%block content%}
     <h4>Amizades</h4>
-        <input type="submit" value="Adicionar amigos" class="botoes"> 
+    <!--<input type="submit" value="Adicionar amigos" class="botoes"> -->
     
     {% if amizades %}
     {% for amizade in amizades %}
-    <div class="amizadesatuais">
-        <table>    
-            <tr class="altura">
-                <td>
-                    <figure>
-                        <img src="./static/user.png" alt="1" class="user" title="usuario">
-                    </figure>
-                </td>
-                <td class="mane">
-                    <p>{{amizade.username}}</p>
-                </td>
-                <td class="time">
-                    <p>
+        <div class="amizadesatuais">
+            <table>    
+                <tr>
+                    <td>
                         <figure>
-                            <img src="./static/escudos/{{amizade.time}}.png" alt="" class="time">
+                            <img src="./static/user.png" alt="1" class="user" title="usuario">
                         </figure>
-                    </p>
-                </td>
-            </tr>    
-        </table>
-    </div>
+                    </td>
+                    <td class="mane">
+                        <p>{{amizade.username}}</p>
+                    </td>
+                    <td class="time">
+                        <p>
+                            <figure>
+                                <img src="./static/escudos/{{amizade.time}}.png" alt="" class="time">
+                            </figure>
+                        </p>
+                    </td>
+                </tr>    
+            </table>
+        </div>
     {% endfor %}
     {% endif %}
 {% endblock %}

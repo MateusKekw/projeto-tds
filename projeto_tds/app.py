@@ -10,13 +10,18 @@ app = Flask(__name__)
 # definição de rotas
 # Nome seguido de - // ingual o arquivo.html
 friendlist = [
-        {"username" : "Mateus", "time" : "Santos"},
-        {"username" : "Milhomem", "time" : "Palmeiras"},
+        {"username" : "Mateus", "time" : "Corinthians"},
+        {"username" : "Milhomem", "time" : "Santos"},
     ]
 
-mensagenslist = [
-    {"username" : "Rafael", "time" : "Fortaleza", "mensagem" : "te convidou para a liga ..."},
-    {"username" : "Sarah", "time" : "Flamengo", "mensagem" : "quer ser sua amiga"},
+userList = [
+    {"username" : "Rafael", "time" : "Fortaleza"},
+    {"username" : "Sarah", "time" : "Flamengo"},
+]
+
+mensagemlist = [
+    {"username": "Milhomais", "mensagem" : "te convidou para a liga..."},
+    {"username": "Bettio", "mensagem" : "quer ser seu amigo"}
 ]
 
 @app.route("/")
@@ -169,7 +174,7 @@ def amizade():
 
 @app.route("/nova-amizade")
 def newamizade():
-    return render_template('addamizade.html')
+    return render_template('addamizade.html', usuarios = userList)
 
 @app.route("/configuracao")
 def configurar():
@@ -185,4 +190,4 @@ def fundo():
 
 @app.route("/mail-box")
 def mensagens():
-    return render_template('mensagens.html', mensagens = mensagenslist)
+    return render_template('mensagens.html', mensagens = mensagemlist)
