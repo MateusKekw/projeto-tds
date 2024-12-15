@@ -14,6 +14,11 @@ friendlist = [
         {"username" : "Milhomem", "time" : "Palmeiras"},
     ]
 
+mensagenslist = [
+    {"username" : "Rafael", "time" : "Fortaleza", "mensagem" : "te convidou para a liga ..."},
+    {"username" : "Sarah", "time" : "Flamengo", "mensagem" : "quer ser sua amiga"},
+]
+
 @app.route("/")
 def index ():
     return render_template('index.html')
@@ -177,3 +182,7 @@ def regras():
 @app.route("/fundo")
 def fundo():
     return render_template('fundo.html')
+
+@app.route("/mail-box")
+def mensagens():
+    return render_template('mensagens.html', mensagens = mensagenslist)

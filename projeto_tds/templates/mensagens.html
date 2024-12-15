@@ -1,4 +1,45 @@
 {% extends "menu.html"%}
 
 {% block content %}
+<h4>Caixa de mensagens</h4>
+    
+    {% if mensagens %}
+    {% for mensagem in mensagens %}
+    <div class="naolidas">
+        <table>    
+            <tr class="altura">
+                <td>
+                    <figure>
+                        <img src="./static/user.png" alt="1" class="user" title="usuario">
+                    </figure>
+                </td>
+                <td class="mane">
+                    <p>{{mensagem.username}} {{mensagem.mensagem}}</p>
+                </td>
+                <td class="time">
+                    <p>
+                        <figure>
+                            <img src="./static/escudos/{{mensagem.time}}.png" alt="" class="time">
+                        </figure>
+                    </p>
+                </td>
+                <td>
+                    <div class="confirm">
+                        <figure>
+                            <img src="./static/check.png" alt="">
+                        </figure>
+                    </div>
+                </td>
+                <td>
+                    <div class="confirm">
+                        <figure>
+                            <img src="./static/x.png" alt="">
+                        </figure>
+                    </div>
+                </td>
+            </tr>    
+        </table>
+    </div>
+    {% endfor %}
+    {% endif %}
 {% endblock %}

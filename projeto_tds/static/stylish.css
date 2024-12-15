@@ -255,6 +255,14 @@ h4{
     position: center;
 }
 
+.buscar{
+    position: center;
+    height: 25px;
+    width: 270px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
 .amizadesatuais.user{
     width: 30px;
     height: 20px;
@@ -268,7 +276,6 @@ h4{
     height: 150px;
     margin-top: 2%;
     transform: translateY(-2%);
-    align-content: center;
 }
 
 .buttons{
@@ -329,4 +336,22 @@ h4{
 .fundo.imagem{
     width: 120px;
     height: 140px;
+}
+
+
+/* caixa de mensagens */
+.confirm{
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to right, #bbbbbb, #ffffff);
+}
+
+.naolidas{
+    background-color: white;
+    margin-left: 10%;
+    transform: translateX(-10%);
+    width: 80%;
+    height: 150px;
+    margin-top: 2%;
+    transform: translateY(-2%);
 }
