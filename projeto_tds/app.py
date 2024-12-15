@@ -16,7 +16,7 @@ friendlist = [
 
 userList = [
     {"username" : "Rafael", "time" : "Fortaleza"},
-    {"username" : "Sarah", "time" : "Flamengo"},
+    {"username" : "Arthur", "time" : "Flamengo"},
 ]
 
 mensagemlist = [
