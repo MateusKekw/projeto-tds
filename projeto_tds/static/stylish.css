@@ -273,7 +273,7 @@ h4{
     margin-left: 10%;
     transform: translateX(-10%);
     width: 80%;
-    height: 150px;
+    height: 120px;
     margin-top: 2%;
     transform: translateY(-2%);
 }
@@ -350,8 +350,8 @@ h4{
     background-color: white;
     margin-left: 10%;
     transform: translateX(-10%);
-    width: 80%;
-    height: 150px;
+    width: 70%;
+    height: 120px;
     margin-top: 2%;
     transform: translateY(-2%);
 }
