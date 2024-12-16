@@ -392,3 +392,19 @@ table{
 .altura{
     height: 80px;
 }
+
+/* convidar participantes */
+
+.invite{
+    background-color: white;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100px;
+}
+
+.convite{
+    background-image: linear-gradient(to right, #23f11d, #04ff00);
+    width: 50px;
+    height: 20px;
+}
