@@ -13,6 +13,25 @@
             <img src="./static/logo.png" alt="1" class="balls" title="bolões" width="110" height="110">
         </figure>
     </div>
+
+    <div id="popupPalpite" class="palpite-overlay" style="display: none;">
+        <div class="popup-content">
+            <h3>Fazer Palpite</h3>
+            <form action="/" id="formPalpite">
+                <label for="timeA">Time A</label>
+                <input type="number" id="timeA" name="timeA" required>
+                <br>
+
+                <label for="timeB">Time B</label>
+                <input type="number" name="timeB" id="timeB" required>
+                <br><br>
+                
+                <button type="button" onclick="enviarPalpite()">Confirmar</button>
+                <button type="button" onclick="fecharPopup()">Cancelar</button>
+            </form>
+        </div>                
+    </div>
+
     <div class="account">
         <img src="./static/user.png" alt="" class="user">
     </div>

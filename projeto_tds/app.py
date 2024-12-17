@@ -172,6 +172,7 @@ def forgot_senhaPost():
                 "UPDATE users SET hashSenha = %s WHERE email = %s", (senha_hash, email)
             )
             conn.commit()
+            cursor.close()
             conn.close()
             flash('Senha redefinida com sucesso!', 'sucess')
             
@@ -185,9 +186,37 @@ def forgot_senhaPost():
 def ligaMata():
     return render_template('Lmata_mata.html')
 
-@app.route("/main")
+
+@app.route("/")
 def ligaMain():
-    return render_template('ligaMain.html')
+    conn = connect
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM times")
+    times = cursor.fetchall()
+    conn.close()
+    return render_template('ligaMain.html', times = times)
+
+@app.route("/", methods=['GET', 'POST'])
+def fazerPalpite():
+    dados = request.json
+    time_a = dados.get('timeA')
+    time_b = dados.get('timeB')
+    placar_a = dados.get('placarA')
+    placar_b = dados.get('placarB')
+
+    if not all ([time_a, time_b, placar_a, placar_b]):
+        return jsonify({'Erro': 'Dados incompletos'}), 400
+    
+    conn = connect
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (time_a, time_b, placar_a, placar_b),)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({'mensagem': 'Palpite salvo com sucesso'})
+
+
 
 @app.route("/liga-classica")
 def ligaClassica():
