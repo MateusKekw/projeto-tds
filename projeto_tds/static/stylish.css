@@ -496,3 +496,198 @@ table{
     text-align: center;
     width: 400px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to right, #bbbbbb, #ffffff);
+    overflow: hidden; /* Esconde o conteúdo que sair da tela */
+    position: relative;
+}
+
+.log {
+    width: 160px;
+    height: 100px;
+    z-index: 2; /* Garante que o logo fique visível */
+    background: linear-gradient(to right, #bbbbbb, #ffffff);
+}
+
+.carousel {
+    display: flex;
+    position: absolute;
+    left: 120px; /* Mantém o espaço para o logo */
+    width: calc(100% - 120px); /* Carrossel ocupa o restante do espaço */
+    height: 80px;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 450px; /* Define a largura de cada slide */
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.team-logo {
+    width: 70px;
+    height: 70px;
+}
+
+.timeCoracao {
+    margin-top: 30px;
+    width: 120px;
+    height: 150px;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #333;
+}
+
+.perfil {
+    padding-bottom: 20px;
+}
+
+/* Conteúdo principal */
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar-left {
+    background: #d9d9d9;
+    width: 140px;
+    padding: 10px;
+}
+
+.user-profile {
+    text-align: center;
+}
+
+.user-profile .avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 30px auto 20px;
+}
+
+.last-bet img {
+    width: 40px;
+}
+
+.central {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Espaço entre os quadrados */
+    height: 100%; /* Garante que ocupa o espaço central */
+    padding: 10px;
+}
+
+.central .quadrado {
+    background-color: rgb(255, 255, 255, 0.5);
+    border: 4px solid black;
+    width: 300px;
+    height: 170px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Evita que elementos saiam do quadrado */
+    text-align: center;
+    margin-left: 150px;
+}
+
+.central .destaque {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.central .ligas-boloes {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border: none;
+    background-color: transparent;
+    height: 100px;
+}
+
+.central .live-bet {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    height: 200px;
+}
+
+.central .noticias {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    height: 300px;
+    margin-top: -100px;
+}
+
+.central h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.central li {
+    text-align: start;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.central p,
+.central ul,
+.central ol {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    padding-left: 15px;
+}
+
+.botao-liga {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 120px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.botao-liga:hover {
+    opacity: 0.8;
+}
+
+.bot {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.bot:hover {
+    opacity: 0.9;
+}
