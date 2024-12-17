@@ -12,7 +12,12 @@ function enviarPalpite(){
     const timeA = form.timeA.value;
     const timeB = form.timeB.value;
 
-    fetch('/main',
+    if (timeA === timeB){
+        alert('Os times não podem ser iguais!');
+        return;
+    }
+
+    fetch('/',
         {method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({timeA, timeB}),
