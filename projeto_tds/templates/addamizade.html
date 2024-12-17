@@ -1,37 +1,37 @@
 {% extends "menu.html"%}
-    <script src="./scripts/busca.js"></script>
 {%block content%} 
-    <h4>Adicionar amigos</h4>
-    <input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar" onchange="busca()">
+<h4>Adicionar amigos</h4>
+<input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar">
     
-    {% if usuarios %}
-    {% for usuario in usuarios %}
-        <div class="amizadesnovas">
-            <table>    
-                <tr>
-                    <td>
+{% if usuarios %}
+{% for usuario in usuarios %}
+    <div class="amizadesnovas">
+        <table class="amigo">    
+            <tr>
+                <td>
+                    <figure>
+                        <img src="./static/user.png" alt="1" class="user" title="usuario">
+                    </figure>
+                </td>
+                <td class="name">
+                    <p>{{usuario.username}}</p>
+                </td>
+                <td class="torcida">
+                    <p>
                         <figure>
-                            <img src="./static/user.png" alt="1" class="user" title="usuario">
+                            <img src="./static/escudos/{{usuario.time}}.png" alt="" class="time">
                         </figure>
-                    </td>
-                    <td class="name">
-                        <p>{{usuario.username}}</p>
-                    </td>
-                    <td class="torcida">
-                        <p>
-                            <figure>
-                                <img src="./static/escudos/{{usuario.time}}.png" alt="" class="time">
-                            </figure>
-                        </p>
-                    </td>
-                    <td class="solicitar">
-                        <button type="button" class="solAmizade">Solicitar<br>Amizade</button>
-                    </td>
-                </tr>    
-            </table>
-        </div>
-    {% endfor %}
-    {% endif %}
+                    </p>
+                </td>
+                <td class="solicitar">
+                    <button type="button" class="solAmizade">Solicitar<br>Amizade</button>
+                </td>
+            </tr>    
+        </table>
+    </div>
+{% endfor %}
+{% endif %}
+<script src="/projeto_tds/static/scripts/busca.js"></script>
 {% endblock %}
 
     
