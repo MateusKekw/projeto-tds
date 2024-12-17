@@ -217,6 +217,9 @@ def fazerPalpite():
     return jsonify({'mensagem': 'Palpite salvo com sucesso'})
 
 
+@app.route("/main")
+def principal():
+    return render_template('telaInicial.html')
 
 @app.route("/liga-classica")
 def ligaClassica():
