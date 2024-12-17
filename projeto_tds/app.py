@@ -17,6 +17,7 @@ friendlist = [
 userList = [
     {"username" : "Rafael", "time" : "Fortaleza"},
     {"username" : "Arthur", "time" : "Flamengo"},
+    {"username" : "Artur", "time" : "VascoDaGama"},
 ]
 
 mensagemlist = [
@@ -191,3 +192,7 @@ def fundo():
 @app.route("/mail-box")
 def mensagens():
     return render_template('mensagens.html', mensagens = mensagemlist)
+
+@app.route("/convite-liga")
+def convidar():
+    return render_template('convidarliga.html', usuarios = userList)

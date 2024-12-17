@@ -1,8 +1,8 @@
 {% extends "menu.html"%}
-
+    <script src="./scripts/busca.js"></script>
 {%block content%} 
     <h4>Adicionar amigos</h4>
-    <input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar">
+    <input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar" onchange="busca()">
     
     {% if usuarios %}
     {% for usuario in usuarios %}

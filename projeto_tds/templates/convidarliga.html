@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./static/stylish.css">
+    <script src="./scripts/busca.js"></script>
 </head>
 <body class="b">
     <figure>
-        <img src="./static/back.png" alt="1" class="back" title="voltar">
+        <img src="./static/back.png" alt="voltar" class="back">
     </figure>
     <input type="submit" href="ligaMain.html" id="voltar" hidden>  
      
@@ -17,7 +18,7 @@
     </figure>
 
     <h4>Adicionar amigos</h4>
-    <input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar">
+    <input type="search" name="newfriends" id="new" class="buscar" placeholder="buscar" onchange="busca()">
     
     {% if usuarios %}
     {% for usuario in usuarios %}
@@ -29,11 +30,11 @@
                             <img src="./static/user.png" alt="1" class="user" title="usuario">
                         </figure>
                     </td>
-                    <td class="name">
+                    <td class="usname">
                         <p>{{usuario.username}}</p>
                     </td>
                     <td class="solicitar">
-                        <input type="button" class="convite">Convidar</button>
+                        <input type="button" value="Convidar" class="convite">
                     </td>
                 </tr>    
             </table>

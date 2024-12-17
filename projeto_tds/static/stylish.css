@@ -24,7 +24,7 @@ body{
     background: url('campo.png'), linear-gradient(to right, #19d114, #009638);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -104,11 +104,8 @@ body{
     width: 130px;
 }
 
-.botoes:active{
-    opacity: 0.9;
-}
-.botoes[disabled]{
-    opacity: 0.6;
+.botoes:hover{
+    opacity: 0.8;
 }
 
 .username.botoes{
@@ -355,6 +352,15 @@ table{
     width: 270px;
     height: 180px;
     cursor: pointer;
+    padding: 10px;
+}
+
+.fundo:hover{
+    opacity: 0.7;
+}
+
+.campo{
+    border: 1px solid black;
 }
 
 /* caixa de mensagens */
@@ -405,6 +411,18 @@ table{
 
 .convite{
     background-image: linear-gradient(to right, #23f11d, #04ff00);
-    width: 50px;
-    height: 20px;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.usname{
+    width: 90%;
+}
+
+/* configurações */
+
+.options{
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
