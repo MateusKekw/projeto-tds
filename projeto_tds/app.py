@@ -196,7 +196,7 @@ def ligaMain():
     conn.close()
     return render_template('ligaMain.html', times = times)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/", methods=['POST'])
 def fazerPalpite():
     dados = request.json
     time_a = dados.get('timeA')
