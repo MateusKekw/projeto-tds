@@ -102,6 +102,7 @@ body{
     cursor: pointer;
     height: 40px;
     width: 130px;
+    border-radius: 30px;
 }
 
 .botoes:hover{
@@ -274,6 +275,7 @@ h4{
     height: 100px;
     margin-top: 2%;
     transform: translateY(-2%);
+    border-radius: 30px;
 }
 
 .amizadesnovas{
@@ -282,6 +284,7 @@ h4{
     transform: translateX(-50%);
     width: 50%;
     height: 100px;
+    border-radius: 30px;
 }
 
 .buttons{
@@ -380,6 +383,7 @@ table{
     height: 80px;
     margin-top: 2%;
     transform: translateY(-2%);
+    border-radius: 30px;
 }
 
 .ok{
@@ -407,6 +411,7 @@ table{
     transform: translateX(-50%);
     width: 50%;
     height: 100px;
+    border-radius: 30px;
 }
 
 .convite{
@@ -414,6 +419,7 @@ table{
     width: 80px;
     height: 40px;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .usname{
