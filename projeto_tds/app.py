@@ -187,14 +187,19 @@ def ligaMata():
     return render_template('Lmata_mata.html')
 
 
-@app.route("/")
+@app.route("/liga-principal")
 def ligaMain():
+    return render_template('ligaMain.html')
+
+
+@app.route("/")
+def principal():
     conn = connect
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM times")
     times = cursor.fetchall()
     conn.close()
-    return render_template('ligaMain.html', times = times)
+    return render_template('telaInicial.html', times = times)
 
 @app.route("/", methods=['POST'])
 def fazerPalpite():
@@ -214,12 +219,7 @@ def fazerPalpite():
     cursor.close()
     conn.close()
 
-    return jsonify({'mensagem': 'Palpite salvo com sucesso'})
-
-
-@app.route("/main")
-def principal():
-    return render_template('telaInicial.html')
+    return jsonify({'mensagem': 'Palpite salvo com sucesso'})    
 
 @app.route("/liga-classica")
 def ligaClassica():
