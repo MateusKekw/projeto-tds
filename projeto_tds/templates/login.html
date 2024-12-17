@@ -13,16 +13,16 @@
     </figure>
 
     <div class="login">
-    <form action="/login" method="post" autocomplete="on">
+    <form action="/login" method="post" autocomplete="off">
         <br>
         <p class="dados"><label for="email">Email</label> </p>
-        <input size="30" maxlength="50" type="text" name="email" id="email" autocomplete="email" onchange="OnChangeEmail()">
+        <input size="30" maxlength="50" type="text" name="email" id="email" autocomplete="email">
 
         <div class="erro" id="Email-required">Email é obrigatório</div>
         <p class="erro" id="Wrong-email">Email inválido</p>
         
         <p class="dados"><label for="senha">Senha</label> </p>
-        <input size="30" maxlength="20" type="password" name="senha" id="senha" autocomplete="current-password" onchange="OnChangeSenha()">
+        <input size="30" maxlength="20" type="password" name="senha" id="senha" autocomplete="current-password">
         
         <p class="erro" id="Password-required">Insira uma senha</p>
         <p class="erro" id="Wrong-password">Senha inválida</p>
@@ -35,7 +35,7 @@
         
         <br>
 
-        <input type="submit" value="Entrar" class="botoes" id="enter" onchange="ToggleButtonsDisable()">
+        <input type="submit" value="Entrar" class="botoes" id="enter">
         
         <br>
         <br>
@@ -43,8 +43,6 @@
         <a href="/cadastro">
             <source>Cadastre-se<source>
         </a>
-
-        <script src="./scripts/login.js"></script>
     </form>
     </div>
 </body>
