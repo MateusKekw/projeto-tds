@@ -11,18 +11,18 @@ app = Flask(__name__)
 # Nome seguido de - // ingual o arquivo.html
 friendlist = [
         {"username" : "Mateus", "time" : "Corinthians"},
-        {"username" : "Milhomem", "time" : "Santos"},
+        {"username" : "Milhomem", "time" : "Santos"}, # isso aqui tem que pegar do banco de dados joel, calma fi
     ]
 
 userList = [
     {"username" : "Rafael", "time" : "Fortaleza"},
     {"username" : "Arthur", "time" : "Flamengo"},
-    {"username" : "Artur", "time" : "VascoDaGama"},
+    {"username" : "Artur", "time" : "VascoDaGama"}, # isso aqui tem que pegar do banco de dados joel, calma fi
 ]
 
 mensagemlist = [
     {"username": "Milhomais", "mensagem" : "te convidou para a liga..."},
-    {"username": "Bettio", "mensagem" : "quer ser seu amigo"}
+    {"username": "Bettio", "mensagem" : "quer ser seu amigo"} # isso aqui não, isso aqui ta dboa
 ]
 
 @app.route("/")
@@ -143,12 +143,41 @@ def userCadastroPost():
             cursor.close()
             conn.close()
     return render_template("user.html")
-    
 
 
-
-@app.route("/recuperação-de-conta")
+@app.route("/recuperacao-de-conta")
 def forgot_senha():
+    return render_template('forgotsenha.html')
+
+@app.route("/recuperacao-de-conta", methods=["GET","POST"])
+def forgot_senhaPost():
+    if request.method == 'POST':
+        email = request.form['email']
+        new_password = request.form['Password']
+        Conf = request.form['Conf']
+
+        conn = connect
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT * FROM users", (email,))
+        user = cursor.fetchtone()
+
+        if Conf != new_password:
+            flash('As senhas não são iguais!')
+            return redirect(url_for('forgot_senhaPost'))
+        
+        if user:
+            senha_hash = generate_password_hash(new_password)
+            cursor.execute(
+                "UPDATE users SET hashSenha = %s WHERE email = %s", (senha_hash, email)
+            )
+            conn.commit()
+            conn.close()
+            flash('Senha redefinida com sucesso!', 'sucess')
+            
+        else:
+            flash('Email não encontrado ou senha repetida')
+            return redirect(url_for('forgot_senhaPost'))
     return render_template('forgotsenha.html')
 
 
@@ -164,7 +193,7 @@ def ligaMain():
 def ligaClassica():
     return render_template('Lclassica.html')
 
-# isso aqui não faz sentido, pq abriria o link do api do site?
+# isso aqui não faz sentido, pq abriria o link da API do site?
 # @app.route("/api/brasileirao")
 # def get_brasileirao():
 #     return brasileirao.baixarbrasileirao()
