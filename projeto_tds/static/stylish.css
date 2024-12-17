@@ -58,8 +58,8 @@ body{
 .login{
     background-color: #d9d9d9;
     text-align: center;
-    margin-top: 5%;
-    transform: translateY(-5%);
+    margin-top: 10%;
+    transform: translateY(-10%);
     border-radius: 3%;
     width: 310px;
     height: 340px;
@@ -70,6 +70,8 @@ body{
 .balls{
     margin-left: 50%;
     transform: translateX(-50%);
+    position: fixed;
+    top: 5px;
 }
 
 .login2{
@@ -87,8 +89,8 @@ body{
 .login3{
     background-color: #d9d9d9;
     text-align: center;
-    margin-top: 5%;
-    transform: translateY(-5%);
+    margin-top: 10%;
+    transform: translateY(-10%);
     border-radius: 3%;
     width: 310px;
     height: 230px;
@@ -267,6 +269,16 @@ h4{
     background-size: contain;
 }
 
+.amigos{
+    position: fixed;
+    top: 7px;
+    right: 60px;
+    cursor: pointer;
+    height: 40px;
+    width: 130px;
+    border-radius: 30px;
+}
+
 .amizadesatuais{
     background-color: white;
     margin-left: 25%;
@@ -431,4 +443,33 @@ table{
 .options{
     margin-left: 50%;
     transform: translateX(-50%);
+}
+
+/* menu */
+
+.topic{
+    margin-top: 2%;
+    transform: translateX(-2%);
+    margin-left: 10%;
+    transform: translateX(-10%);
+    margin-bottom: 5%;
+    transform: translateX(-5%);
+}
+
+.t2{
+    margin-top: 3%;
+    transform: translateX(-3%);
+    margin-left: 10%;
+    transform: translateX(-10%);
+    margin-bottom: 5%;
+    transform: translateX(-5%);
+}
+
+.t3{
+    margin-top: 5%;
+    transform: translateX(-5%);
+    margin-left: 10%;
+    transform: translateX(-10%);
+    margin-bottom: 5%;
+    transform: translateX(-5%);
 }

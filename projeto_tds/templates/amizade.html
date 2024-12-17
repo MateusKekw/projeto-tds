@@ -1,9 +1,9 @@
 {% extends "menu.html"%}
 
 {%block content%}
-    <h4>Amizades</h4>
+    <h4 class="topic">Amizades</h4>
     <a href="/nova-amizade">
-        <input type="button" class="botoes" value="Adicionar amigos">
+        <input type="button" class="amigos" value="Adicionar amigos">
     </a>
     {% if amizades %}
     {% for amizade in amizades %}
