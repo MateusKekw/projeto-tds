@@ -2,7 +2,9 @@
 
 {%block content%}
     <h4>Amizades</h4>
-    <button type="button" class="botoes">Adicionar <br> amigos </button>
+    <a href="/nova-amizade">
+        <input type="button" class="botoes" value="Adicionar amigos">
+    </a>
     {% if amizades %}
     {% for amizade in amizades %}
         <div class="amizadesatuais">
