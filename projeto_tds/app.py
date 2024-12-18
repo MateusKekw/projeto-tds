@@ -193,7 +193,7 @@ def ligaMain():
 
 
 @app.route("/")
-def index():
+def inicio():
     conn = connect
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM times")
