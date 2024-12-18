@@ -7,7 +7,7 @@ import projeto_tds.brasileirao as brasileirao
 # (por enquanto)
 
 def connect_init(host, usuario, senha, banco, porta):
-    return mysql.connector.connect(host=host, user=usuario, password=senha, database=banco, door=porta)
+    return mysql.connector.connect(host=host, user=usuario, password=senha, database=banco, port=porta)
 
 
 def bolões(connect, chave, IdPartida, hora):

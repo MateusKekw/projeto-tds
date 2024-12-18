@@ -6,6 +6,7 @@ import mysql.connector
 
 connect = connect_init("junction.proxy.rlwy.net","root","buTnOqRinBsTLCVMltEZftLEiPfoMjKc","boloes", 29751)
 app = Flask(__name__)
+app.secret_key = ''
 
 # definição de rotas
 # Nome seguido de - // ingual o arquivo.html
@@ -29,29 +30,47 @@ mensagemlist = [
 def index():
     return render_template('index.html')
 
-@app.route("/", methods=['POST'])
-def fazerPalpite():
-
+@app.route("/palpite")
+def palpite():
     conn = connect
-    cursor = conn.cursor()
+    cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM times")
     times = cursor.fetchall()
-
-    dados = request.json
-    time_a = dados.get('timeA')
-    time_b = dados.get('timeB')
-    placar_a = dados.get('placarA')
-    placar_b = dados.get('placarB')
-
-    if not all ([time_a, time_b, placar_a, placar_b]):
-        return jsonify({'Erro': 'Dados incompletos'}), 400
-    
-    cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (time_a, time_b, placar_a, placar_b),)
-    conn.commit()
     cursor.close()
     conn.close()
+    return render_template("palpite.html", times=times)
 
-    return jsonify({'mensagem': 'Palpite salvo com sucesso'}) and render_template('index.html', times=times) 
+@app.route("/palpite", methods=['GET','POST'])
+def fazerPalpite():
+    if request.method == 'POST':
+        timeA = request.form.get('timeA')
+        timeB = request.form.get('timeB')
+        placarA = request.form.get('placarA')
+        placarB = request.form.get('placarB')
+
+        if timeA == timeB:
+            flash('Os dois times não podem ser iguais!', 'danger')
+            return redirect(url_for('FazerPalpite'))
+
+        if not timeA or not timeB or not placarA or not placarB:
+            flash('Todos os campos são obrigatórios!')
+            return redirect(url_for('fazerPalpite'))
+        
+        try:
+            conn = connect
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (timeA, timeB, placarA, placarB),)
+            conn.commit()
+            flash('Seu palpite foi feito com sucesso!!')
+
+        except mysql.connector.Error as err:
+            flash(f'Erro: {err}')
+            return redirect(url_for('fazerPalpite'))
+        
+        finally:
+            conn.close()
+
+    return render_template('palpite.html')
 
 @app.route("/login")
 def login():
@@ -60,8 +79,8 @@ def login():
 @app.route("/login", methods = ['GET', 'POST'])
 def loginPost():
     if request.method == 'POST':
-        email = request.method.get(email)
-        senha = request.method.get(senha)
+        email = request.method.get('email')
+        senha = request.method.get('senha')
 
         if not email or not senha:
             flash('Todos os campos são obrigatórios!')
@@ -98,10 +117,10 @@ def cadastro():
 @app.route("/cadastro", methods = ['GET', 'POST'])
 def cadastroPost():
     if request.method == 'POST':
-        email = request.form.get(email)
-        senha = request.form.get(senha)
-        confSenha = request.form.get(confSenha)
-        idade = request.form.get(idade)
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        confSenha = request.form.get('confSenha')
+        idade = request.form.get('idade')
 
         if senha != confSenha:
             flash('As senhas não são iguais!')

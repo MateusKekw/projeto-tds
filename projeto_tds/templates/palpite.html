@@ -1,28 +1,35 @@
 {% extends "menu.html"%}
 
 {% block content %}
-    <h3>Fazer Palpite</h3>
-        <form action="/" id="formPalpite">
+    <div class="login2">
+        <br>
+        <h3>Fazer Palpite</h3>
+        <form action="/palpite" method="POST" autocomplete="off">
             <label for="timeA">Time A</label>
-            <select name="timeA" id="timeA">
-                {% for time in times %}
-                
-                <option value="{{ time.nome }}">{{ time.nome }}</option>
-                {% endfor %}
-            </select>
-            
-            <input type="number" id="timeA" name="timeA" required>
-            <br>
-                
-            <label for="timeB">Time B</label>
-            <select name="timeB" id="timeB">
-                {% for time in times %}
-                
-                <option value="{{ time.nome }}">{{ time.nome }}</option>
-                {% endfor %}
-            </select>
-                
-            <input type="number" name="timeB" id="timeB" required>
+            <input list="timesList" name="timeA" id="timeA" required placeholder="Digite o Time A">
             <br><br>
+        
+            <label for="placarA">Placar A</label>
+            <input type="number" name="placarA" id="placarA" required placeholder="Digite o Placar A">
+            <br><br>
+        
+            <label for="timeB">Time B</label>
+            <input list="timesList" name="timeB" id="timeB" required placeholder="Digite o Time B">
+            <br><br>
+        
+            <label for="placarB">Placar B</label>
+            <input type="number" name="placarB" id="placarB" required placeholder="Digite o Placar B">
+            <br><br>
+        
+            <!-- Datalist com as opções de times -->
+            <datalist id="timesList">
+                {% for time in times %}
+                <option value="{{ time.nome }}">{{ time.id }}</option>
+                {% endfor %}
+            </datalist>
+        
+            <input type="submit" value="Confirmar">
+        </form>
+        </div>
 
 {% endblock %}
