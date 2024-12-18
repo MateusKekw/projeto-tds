@@ -29,6 +29,30 @@ mensagemlist = [
 def index():
     return render_template('index.html')
 
+@app.route("/", methods=['POST'])
+def fazerPalpite():
+
+    conn = connect
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM times")
+    times = cursor.fetchall()
+
+    dados = request.json
+    time_a = dados.get('timeA')
+    time_b = dados.get('timeB')
+    placar_a = dados.get('placarA')
+    placar_b = dados.get('placarB')
+
+    if not all ([time_a, time_b, placar_a, placar_b]):
+        return jsonify({'Erro': 'Dados incompletos'}), 400
+    
+    cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (time_a, time_b, placar_a, placar_b),)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return jsonify({'mensagem': 'Palpite salvo com sucesso'}) and render_template('index.html', times=times) 
+
 @app.route("/login")
 def login():
     return render_template('login.html')
@@ -129,7 +153,7 @@ def userCadastroPost():
             conn = connect
             cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO users (usuario, coracao) VALUES (%s, %s)", (usuario, time)
+                "INSERT INTO users (usuário, coracao) VALUES (%s, %s)", (usuario, time)
             )
             conn.commit()
             flash('Usuário registrado com Sucesso!')
@@ -191,30 +215,6 @@ def ligaMata():
 def ligaMain():
     return render_template('ligaMain.html')
 
-
-@app.route("/", methods=['POST'])
-def fazerPalpite():
-
-    conn = connect
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM times")
-    times = cursor.fetchall()
-
-    dados = request.json
-    time_a = dados.get('timeA')
-    time_b = dados.get('timeB')
-    placar_a = dados.get('placarA')
-    placar_b = dados.get('placarB')
-
-    if not all ([time_a, time_b, placar_a, placar_b]):
-        return jsonify({'Erro': 'Dados incompletos'}), 400
-    
-    cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (time_a, time_b, placar_a, placar_b),)
-    conn.commit()
-    cursor.close()
-    conn.close()
-
-    return jsonify({'mensagem': 'Palpite salvo com sucesso'}) and render_template('index.html', times=times) 
 
 @app.route("/liga-classica")
 def ligaClassica():
