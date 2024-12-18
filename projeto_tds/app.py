@@ -4,7 +4,7 @@ from werkzeug.security import *
 import projeto_tds.brasileirao as brasileirao
 import mysql.connector
 
-connect = connect_init("127.0.0.1","PC","m@tEuS.17","boloes")
+connect = connect_init("junction.proxy.rlwy.net","root","buTnOqRinBsTLCVMltEZftLEiPfoMjKc","boloes", 29751)
 app = Flask(__name__)
 
 # definição de rotas

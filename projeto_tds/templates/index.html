@@ -80,42 +80,8 @@
                     
                     <main>
                         <h2>Faça seu Palpite</h2>
-                        <button class="botao-liga" onclick="abrirPopup()">Fazer Palpite</button>
+                        <button href="palpite.html" class="botao-liga" >Fazer Palpite</button>
                     </main>
-                
-                    <!-- Pop-up chato do carai -->
-                    <div id="popupPalpite" class="palpite-overlay" style="display: none;">
-                        <div class="popup-content">
-                            <h3>Fazer Palpite</h3>
-                            <form action="/" id="formPalpite">
-                                <label for="timeA">Time A</label>
-                                <select name="timeA" id="timeA">
-                                    {% for time in times %}
-                
-                                    <option value="{{ time.nome }}">{{ time.nome }}</option>
-                                    {% endfor %}
-                                </select>
-                
-                                <input type="number" id="timeA" name="timeA" required>
-                                <br>
-                
-                                <label for="timeB">Time B</label>
-                                <select name="timeB" id="timeB">
-                                    {% for time in times %}
-                
-                                    <option value="{{ time.nome }}">{{ time.nome }}</option>
-                                    {% endfor %}
-                                </select>
-                
-                                <input type="number" name="timeB" id="timeB" required>
-                                <br><br>
-                                
-                                <button type="button" onclick="enviarPalpite()">Confirmar</button>
-                                <button type="button" onclick="fecharPopup()">Cancelar</button>
-                            </form>
-                        </div>                
-                    </div>
-                </div>
             
                 <!-- Bolões e Ligas -->
                 <div class="quadrado ligas-boloes">
