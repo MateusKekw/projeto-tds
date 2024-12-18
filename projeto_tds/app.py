@@ -4,7 +4,7 @@ from werkzeug.security import *
 import projeto_tds.brasileirao as brasileirao
 import mysql.connector
 
-connect = connect_init("127.0.0.1","PC","1234","boloes")
+connect = connect_init("127.0.0.1","PC","m@tEuS.17","boloes")
 app = Flask(__name__)
 
 # definição de rotas
@@ -129,7 +129,7 @@ def userCadastroPost():
             conn = connect
             cursor = conn.cursor()
             cursor.execute(
-                "INSERT INTO users (usuario, time) VALUES (%s, %s)", (usuario, time)
+                "INSERT INTO users (usuario, coracao) VALUES (%s, %s)", (usuario, time)
             )
             conn.commit()
             flash('Usuário registrado com Sucesso!')
