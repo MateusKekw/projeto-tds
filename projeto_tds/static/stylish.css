@@ -691,3 +691,10 @@ table{
 .bot:hover {
     opacity: 0.9;
 }
+
+#no-result{
+    display: none;
+    text-align: center;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
