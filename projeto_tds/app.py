@@ -192,8 +192,6 @@ def ligaMain():
     return render_template('ligaMain.html')
 
 
-
-
 @app.route("/", methods=['POST'])
 def fazerPalpite():
 
