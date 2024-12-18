@@ -26,7 +26,7 @@ mensagemlist = [
 ]
 
 @app.route("/")
-def index ():
+def index():
     return render_template('index.html')
 
 @app.route("/login")
@@ -192,17 +192,16 @@ def ligaMain():
     return render_template('ligaMain.html')
 
 
-@app.route("/")
-def inicio():
+
+
+@app.route("/", methods=['POST'])
+def fazerPalpite():
+
     conn = connect
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM times")
     times = cursor.fetchall()
-    conn.close()
-    return render_template('telaInicial.html', times = times)
 
-@app.route("/", methods=['POST'])
-def fazerPalpite():
     dados = request.json
     time_a = dados.get('timeA')
     time_b = dados.get('timeB')
@@ -212,19 +211,12 @@ def fazerPalpite():
     if not all ([time_a, time_b, placar_a, placar_b]):
         return jsonify({'Erro': 'Dados incompletos'}), 400
     
-    conn = connect
-    cursor = conn.cursor()
     cursor.execute("INSERT INTO boloes (timeA, timeB, placarA, placarB) VALUES (%s, %s, %s, %s)", (time_a, time_b, placar_a, placar_b),)
     conn.commit()
     cursor.close()
     conn.close()
 
-    return jsonify({'mensagem': 'Palpite salvo com sucesso'})    
-
-
-@app.route("/main")
-def principal():
-    return render_template('telaInicial.html')
+    return jsonify({'mensagem': 'Palpite salvo com sucesso'}) and render_template('index.html', times=times) 
 
 @app.route("/liga-classica")
 def ligaClassica():

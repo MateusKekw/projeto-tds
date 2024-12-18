@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/stylish.css">
+    <script src="./scripts/busca.js"></script>
+    <script src="/scripts/palpite.js"></script>
+</head>
+<body class="f2">
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="log">
+                <figure>
+                    <img src="../static/logo.png" alt="1" class="bolas" title="bolões" width="110" height="110">
+                </figure>
+            </div>
+            <div class="carousel" id="carousel">
+                <div class="slide">
+                    <img src="../static/escudos/Fluminense.png" alt="Fluminense" class="team-logo">
+                    <span class="score">2x2</span>
+                    <img src="../static/escudos/Gremio.png" alt="Grêmio" class="team-logo">
+                </div>
+                <div class="slide">
+                    <img src="../static/escudos/RB-Bragantino.png" alt="Bragantino" class="team-logo">
+                    <span class="score">2/11 16:00</span>
+                    <img src="../static/escudos/Cuiaba.png" alt="Cuiaba" class="team-logo">
+                </div>
+                <div class="slide">
+                    <img src="../static/escudos/Santos.png" alt="Santos" class="team-logo">
+                    <span class="score">2/11 16:30</span>
+                    <img src="../static/escudos/Inter.png" alt="Internacional" class="team-logo">
+                </div>
+                <div class="slide">
+                    <img src="../static/escudos/VascoDaGama.png" alt="Vasco" class="team-logo">
+                    <span class="score">2/11 18:30</span>
+                    <img src="../static/escudos/SPFC.png" alt="SPFC" class="team-logo">
+                </div>
+                <div class="slide">
+                    <img src="../static/escudos/Vitória.png" alt="Vitória" class="team-logo">
+                    <span class="score">3/11 21:00</span>
+                    <img src="../static/escudos/Criciuma.png" alt="Criciuma" class="team-logo">
+                </div>
+                <!-- Adicione mais slides aqui -->
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <!-- Lateral Esquerda -->
+            <div class="sidebar-left">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <img src="../static/user.png" alt="Usuario" class="user">
+                    </div>
+                    <h3 class="perfil">Gigante Eterno12</h3>
+                    <span class="score">Último Bolão:</span>
+                    <div class="last-bet">
+                        <img src="../static/escudos/Botafogo.png" alt="Botafogo">
+                        <span class="score">1x0</span>
+                        <img src="../static/escudos/CAP.png" alt="Athletico">
+                    </div>
+                    <img src="../static/escudos/Corinthians.png" alt="Corinthians" class="timeCoracao">
+                </div>
+            </div>
+
+            <!-- Conteúdo Central -->
+            <div class="central">
+                <div class="quadrado destaque">
+                    <h3>Destaque</h3>
+                    <p>Brasileirão Série A - 32ª rodada</p>
+                    <div class="slide">
+                        <img src="../static/escudos/Corinthians.png" alt="Corinthians" class="team-logo">
+                        <span class="score">4/11 20:00</span>
+                        <img src="../static/escudos/Palmeiras.png" alt="Palmeiras" class="team-logo">
+                    </div>
+                    <p>Mais de 1 milhão de palpites depositados</p>
+                    
+                    <main>
+                        <h2>Faça seu Palpite</h2>
+                        <button class="botao-liga" onclick="abrirPopup()">Fazer Palpite</button>
+                    </main>
+                
+                    <!-- Pop-up chato do carai -->
+                    <div id="popupPalpite" class="palpite-overlay" style="display: none;">
+                        <div class="popup-content">
+                            <h3>Fazer Palpite</h3>
+                            <form action="/" id="formPalpite">
+                                <label for="timeA">Time A</label>
+                                <select name="timeA" id="timeA">
+                                    {% for time in times %}
+                
+                                    <option value="{{ time.nome }}">{{ time.nome }}</option>
+                                    {% endfor %}
+                                </select>
+                
+                                <input type="number" id="timeA" name="timeA" required>
+                                <br>
+                
+                                <label for="timeB">Time B</label>
+                                <select name="timeB" id="timeB">
+                                    {% for time in times %}
+                
+                                    <option value="{{ time.nome }}">{{ time.nome }}</option>
+                                    {% endfor %}
+                                </select>
+                
+                                <input type="number" name="timeB" id="timeB" required>
+                                <br><br>
+                                
+                                <button type="button" onclick="enviarPalpite()">Confirmar</button>
+                                <button type="button" onclick="fecharPopup()">Cancelar</button>
+                            </form>
+                        </div>                
+                    </div>
+                </div>
+            
+                <!-- Bolões e Ligas -->
+                <div class="quadrado ligas-boloes">
+                    <button class="botao-liga">Bolões</button>
+                    <a href="liga-principal">
+                       <button class="botao-liga">Ligas</button>  
+                    </a>
+                </div>
+            
+                <!-- Liga Bolão -->
+                <div class="quadrado live-bet">
+                    <h3>Liga Bolão de Plantão</h3>
+                    <ol>
+                        <li>Mathias Rojas</li>
+                        <li>Rony Rústico</li>
+                        <li>Gigante Eterno12</li>
+                    </ol>
+                </div>
+            
+                <!-- Notícias -->
+                <div class="quadrado noticias">
+                    <h3>Notícias</h3>
+                    <ul>
+                        <li>Corinthians e Palmeiras se enfrentam pela 32ª rodada do Brasileirão Betano</li>
+                        <li>Criciúma tem 5 desfalques para o jogo contra o Internacional</li>
+                        <li>Atlético-MG se concentra para a final contra o Bahia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
