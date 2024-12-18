@@ -1,15 +1,34 @@
 const username = document.getElementById('new');
 username.addEventListener('input', (event) => {
-    const value = event.target.value;
+    const value = formatString(event.target.value);
 
-    console.log(formatString(value))
+    const usernames = document.querySelectorAll('.amizadesnovas .amigo');
+    const none = document.getElementById('no-results');
+
+    let hasresults = false;
+
+    usernames.forEach(amigo => {
+        if(formatString(amigo.textContent.indexOf(value) !== -1)){
+            amigo.style.display = 'flex';
+            hasresults = true;
+        } else {
+            amigo.style.display = 'none';
+        }
+    })
+
+    if(hasresults){
+        none.style.display = 'none';
+    } else {
+        none.style.display = 'block';
+    }
 });
 
 function formatString(value){
     return value.toLowerCase().trin();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+
+/*document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.getElementById("carousel");
     const slides = Array.from(carousel.children);
 
@@ -38,5 +57,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     animateCarousel();
-});
-
+});*/
